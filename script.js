@@ -17,11 +17,10 @@ const isNumber = function(num){
       
     }
     if (isNumber(numUser)) {
-      const realNum = +numUser;
-      if (realNum > num) {
+      if (numUser > num) {
         alert('Упс. У бота Число меньше');
         game()
-      } else if (realNum < num) {
+      } else if (numUser < num) {
         alert('Упс. У бота Число больше');
         game()
       } else {
