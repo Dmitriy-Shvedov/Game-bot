@@ -1,6 +1,7 @@
 // let questionUsers = +prompt('Угадай число от 1 до 100')
-let numUser
-let num = 1
+
+let num 
+let item = 0;
 
 
 const isNumber = function(num){
@@ -9,26 +10,24 @@ const isNumber = function(num){
 
   const start = function () {
   num = Math.floor(Math.random() * 100);
-  console.log('Загаданное число: ' + num);
-  numUser = prompt('Проверь интуицию. Введи число от 1 до 100');
-  const game = function () {
+  console.log(num);
+  let game = function () {
+    numUser = prompt('Проверь интуицию. Введи число от 1 до 100');
     if (numUser === null) {
       return alert('Игра окончена');
-      
     }
     if (isNumber(numUser)) {
       if (numUser > num) {
         alert('Упс. У бота Число меньше');
-        game()
+        game();
       } else if (numUser < num) {
         alert('Упс. У бота Число больше');
-        game()
+        game();
       } else {
         if (confirm('Угадали! Сыграем ещё?')) {
           start();
         } else {
           alert('Как хотите, до свидания!');
-          
         }
       }
     } else {
